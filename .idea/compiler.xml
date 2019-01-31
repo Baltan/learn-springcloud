@@ -7,12 +7,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="eureka-server" />
+        <module name="eureka-server-cluster" />
         <module name="ticket-consumer" />
         <module name="ticket-provider" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="eureka-server" target="1.8" />
+      <module name="eureka-server-cluster" target="1.8" />
       <module name="ticket-consumer" target="1.8" />
       <module name="ticket-provider" target="1.8" />
     </bytecodeTargetLevel>
@@ -20,6 +22,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="eureka-server" options="-parameters" />
+      <module name="eureka-server-cluster" options="-parameters" />
       <module name="ticket-consumer" options="-parameters" />
       <module name="ticket-provider" options="-parameters" />
     </option>
