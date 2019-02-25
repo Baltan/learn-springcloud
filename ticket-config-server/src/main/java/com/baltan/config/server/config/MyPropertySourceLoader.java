@@ -14,7 +14,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.*;
 
 /**
- * Description:
+ * Description: 解决读取git配置中文乱码的问题
  *
  * @author Baltan
  * @date 2019-02-25 22:03
