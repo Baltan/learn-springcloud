@@ -6,6 +6,7 @@ import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
@@ -55,7 +56,9 @@ public class UserLoginZuulFilter extends ZuulFilter {
             requestContext.setSendZuulResponse(false); // 过滤该请求，不对其进行路由
             requestContext.setResponseStatusCode(401); // 设置状态响应码
             try {
-                requestContext.getResponse().getWriter().write("请求参数中没有token参数");
+                HttpServletResponse response = requestContext.getResponse();
+                response.setCharacterEncoding("utf-8");
+                response.getWriter().write("请求参数中没有token参数");
             } catch (IOException e) {
             }
         }
