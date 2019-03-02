@@ -1,5 +1,6 @@
 package com.baltan.provider.service;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.stereotype.Component;
 
 /**
@@ -11,7 +12,12 @@ import org.springframework.stereotype.Component;
 @Component
 public class TicketService {
 
+    @HystrixCommand(fallbackMethod = "getTicketError")
     public String getTicket() {
         return "电影票：《3D肉蒲团》";
+    }
+
+    public String getTicketError() {
+        return "error!";
     }
 }
