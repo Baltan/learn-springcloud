@@ -7,13 +7,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 /**
  * Description:
  *
+ * @author Baltan
  * @FeignClient的value属性值为服务提供者的id
  * @RequestMapping的value属性值为要调用的服务提供者的接口的url
- *
- * @author Baltan
  * @date 2019-02-04 14:49
  */
-@FeignClient(value = "ticket-provider") // 服务提供者的id
+@FeignClient(value = "ticket-provider", fallback = ConsumerFeignClientHystrix.class) // 服务提供者的id
 public interface ConsumerFeignClient {
 
     @RequestMapping(value = "/getTicket", method = RequestMethod.GET)
