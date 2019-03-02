@@ -1,19 +1,13 @@
 package com.baltan.consumer.controller;
 
 import com.baltan.consumer.feign.ConsumerFeignClient;
-import com.netflix.discovery.converters.Auto;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
-import org.springframework.web.util.UriComponentsBuilder;
-
-import java.net.URI;
-import java.util.List;
 
 /**
  * Description:
@@ -37,6 +31,7 @@ public class ConsumerController {
 //    private String url;
 
     @GetMapping("/buyTicket/{name}")
+    @HystrixCommand(fallbackMethod = "buyTicketError")
     public String buyTicket(@PathVariable("name") String name) {
 
 //        String ticketName = restTemplate.getForObject(url + "getTicket", String.class);
@@ -61,5 +56,10 @@ public class ConsumerController {
 
         String ticketName = consumerFeignClient.getTicket();
         return name + "购买了" + ticketName;
+    }
+
+
+    public String buyTicketError(String name) {
+        return "error!";
     }
 }
