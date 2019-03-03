@@ -9,3 +9,4 @@ zipkin-service-one:9001
 zipkin-service-two:9002
 ticket-service-turbine:9090
 gateway-predicate:8081
+gateway-filter:8082
