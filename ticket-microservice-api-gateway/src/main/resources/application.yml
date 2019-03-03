@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: ticket-provider
+          uri: lb://TICKET-PROVIDER
+          #以/ticket/**开头的请求都会转发到lb://TICKET-PROVIDER（ticket-provider的负载均衡地址）上
+          predicates:
+            - Path=/ticket/**
+          #在转发之前将/ticket去掉
+          filters:
+            - StripPrefix=1
