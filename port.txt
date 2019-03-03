@@ -8,3 +8,4 @@ ticket-config-client:8889（配置在bootstrap.properties中）
 zipkin-service-one:9001
 zipkin-service-two:9002
 ticket-service-turbine:9090
+gateway-predicate:8081
