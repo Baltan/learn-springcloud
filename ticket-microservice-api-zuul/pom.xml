@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.baltan</groupId>
-    <artifactId>ticket-microservice-api-gateway</artifactId>
+    <artifactId>ticket-microservice-api-zuul</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>ticket-microservice-api-gateway</name>
+    <name>ticket-microservice-api-zuul</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>

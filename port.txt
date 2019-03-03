@@ -2,7 +2,7 @@ eureka-server:8761
 eureka-server-cluster:8762
 ticket-provider:8001（可修改为8002、8003……启动多个服务构建集群）
 ticket-consumer:8200
-ticket-microservice-api-gateway:6677
+ticket-microservice-api-zuul:6677
 ticket-config-server:8888
 ticket-config-client:8889（配置在bootstrap.properties中）
 zipkin-service-one:9001

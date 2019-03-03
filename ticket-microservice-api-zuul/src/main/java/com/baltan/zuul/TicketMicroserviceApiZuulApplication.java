@@ -1,4 +1,4 @@
-package com.baltan.gateway;
+package com.baltan.zuul;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,10 +10,10 @@ import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 @EnableZuulProxy
 @EnableEurekaClient
 @EnableDiscoveryClient
-public class TicketMicroserviceApiGatewayApplication {
+public class TicketMicroserviceApiZuulApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(TicketMicroserviceApiGatewayApplication.class, args);
+        SpringApplication.run(TicketMicroserviceApiZuulApplication.class, args);
     }
 
 }

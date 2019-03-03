@@ -1,4 +1,4 @@
-package com.baltan.gateway.filter;
+package com.baltan.zuul.filter;
 
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
