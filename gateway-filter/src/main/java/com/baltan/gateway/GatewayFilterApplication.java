@@ -2,6 +2,7 @@ package com.baltan.gateway;
 
 import com.baltan.gateway.filter.RequestTimeFilter;
 import com.baltan.gateway.filter.RequestTimeGatewayFilterFactory;
+import com.baltan.gateway.filter.TokenFilter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.gateway.route.RouteLocator;
@@ -31,5 +32,10 @@ public class GatewayFilterApplication {
     @Bean
     public RequestTimeGatewayFilterFactory elapsedGatewayFilterFactory() {
         return new RequestTimeGatewayFilterFactory();
+    }
+
+    @Bean
+    public TokenFilter tokenFilter() {
+        return new TokenFilter();
     }
 }
